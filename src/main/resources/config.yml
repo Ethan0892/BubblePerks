@@ -1,0 +1,62 @@
+# BubblePerks Configuration
+# Main plugin settings
+
+# GUI Settings
+gui:
+  title: '<gold><b>Bubble<aqua>Craft <#FFC380>ᴘ<#E9AF87>ᴇ<#D39C8F>ʀ<#BC8896>ᴋ<#A6749D>ꜱ'
+  size: 54 # 6 rows
+  update-interval: 20 # ticks
+  
+  # Slot configuration for perks (0-53 for 6-row inventory)
+  slots:
+    # Player info slot
+    player-info: 4
+    
+    # Utility command perk slots
+    utilities:
+      grindstone: 10
+      workbench: 19
+      anvil: 28
+      enderchest: 37
+      cartographytable: 11
+      stonecutter: 20
+      carttable: 29
+      smithingtable: 38
+      loom: 47
+    
+    # Home upgrade slots (info + tiers)
+    homes:
+      info: 12
+      tier1: 21
+      tier2: 30
+      tier3: 39
+    
+    # Vault upgrade slots (info + tiers) 
+    vaults:
+      info: 14
+      tier1: 23
+      tier2: 32
+      tier3: 41
+    
+    # Job upgrade slots (info + tiers)
+    jobs:
+      info: 13
+      tier1: 22
+      tier2: 31
+      tier3: 40
+
+# Economy Settings
+economy:
+  currency-symbol: '🫧'
+  format-thousands: true
+
+# Integration Settings
+integrations:
+  placeholderapi: true
+  essentials: true
+  jobs: true
+  axvaults: true
+  coinsengine: true
+
+# Debug mode
+debug: false
