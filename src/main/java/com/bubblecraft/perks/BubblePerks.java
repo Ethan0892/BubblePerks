@@ -2,6 +2,7 @@ package com.bubblecraft.perks;
 
 import com.bubblecraft.perks.commands.PerksCommand;
 import com.bubblecraft.perks.config.ConfigManager;
+import com.bubblecraft.perks.economy.CoinsEngineManager;
 import com.bubblecraft.perks.economy.EconomyManager;
 import com.bubblecraft.perks.gui.PerksGUI;
 import com.bubblecraft.perks.listeners.InventoryListener;
@@ -22,6 +23,7 @@ public final class BubblePerks extends JavaPlugin {
     // Managers
     private ConfigManager configManager;
     private EconomyManager economyManager;
+    private CoinsEngineManager coinsEngineManager;
     private PerkManager perkManager;
     private PlaceholderManager placeholderManager;
     private PerksGUI perksGUI;
@@ -51,15 +53,44 @@ public final class BubblePerks extends JavaPlugin {
     
     private boolean initializePlugin() {
         try {
-            // Check for Vault
-            if (!setupEconomy()) {
-                logger.severe("Vault not found! Please install Vault to use BubblePerks.");
+            // Initialize config first
+            configManager = new ConfigManager(this);
+            
+            // Check for economy plugins
+            boolean useCoinsEngine = getConfig().getBoolean("economy.use-coinsengine", true);
+            boolean hasCoinsEngine = getServer().getPluginManager().getPlugin("CoinsEngine") != null;
+            boolean hasVault = setupEconomy();
+            
+            // Try to use CoinsEngine if enabled and available
+            if (useCoinsEngine && hasCoinsEngine) {
+                try {
+                    coinsEngineManager = new CoinsEngineManager(this);
+                    if (coinsEngineManager.isAvailable()) {
+                        logger.info("Using CoinsEngine for economy!");
+                    } else {
+                        logger.warning("CoinsEngine found but no currency available, falling back to Vault");
+                        coinsEngineManager = null;
+                    }
+                } catch (Exception e) {
+                    logger.warning("Failed to hook into CoinsEngine: " + e.getMessage());
+                    logger.warning("Falling back to Vault economy");
+                    coinsEngineManager = null;
+                }
+            }
+            
+            // Always initialize EconomyManager - it will delegate to CoinsEngine if available
+            if (coinsEngineManager == null && !hasVault) {
+                logger.severe("No economy plugin found! Please install Vault + an economy plugin, or CoinsEngine.");
                 return false;
             }
             
-            // Initialize managers
-            configManager = new ConfigManager(this);
+            // EconomyManager handles delegation to CoinsEngine or Vault
             economyManager = new EconomyManager(this);
+            if (coinsEngineManager == null) {
+                logger.info("Using Vault for economy");
+            }
+            
+            // Initialize other managers
             perkManager = new PerkManager(this);
             placeholderManager = new PlaceholderManager(this);
             perksGUI = new PerksGUI(this);
@@ -117,6 +148,17 @@ public final class BubblePerks extends JavaPlugin {
     
     public EconomyManager getEconomyManager() {
         return economyManager;
+    }
+    
+    public CoinsEngineManager getCoinsEngineManager() {
+        return coinsEngineManager;
+    }
+    
+    /**
+     * Check if using CoinsEngine
+     */
+    public boolean isUsingCoinsEngine() {
+        return coinsEngineManager != null && coinsEngineManager.isAvailable();
     }
     
     public PerkManager getPerkManager() {

@@ -1,21 +1,24 @@
 # BubblePerks
 
-A modern, feature-rich perks system for Minecraft 1.21.8+ servers. This plugin allows players to purchase various upgrades and utility commands using in-game currency.
+> **Version 2.0.0** - A modern, feature-rich perks system for Minecraft 1.21.8+ servers with native CoinsEngine support.
 
-## Features
+A comprehensive perks system that allows players to purchase various upgrades and utility commands using in-game currency through an elegant GUI.
 
-- **Beautiful GUI**: Custom-designed perks menu with gradient text and modern styling
-- **Multiple Perk Types**: Commands, upgrades, utilities, and cosmetics
-- **Economy Integration**: Full Vault API support for economy systems
-- **PlaceholderAPI Support**: Custom placeholders for other plugins
+## ✨ Features
+
+- **Beautiful GUI**: Modern perks menu with gradient text, borders, and category sections
+- **CoinsEngine Integration**: Native support for CoinsEngine v2.5.0+ with automatic currency detection
+- **Vault Compatibility**: Seamless fallback to Vault economy systems
+- **Multiple Perk Types**: Commands, upgrades, utilities, and progressive tiers
+- **PlaceholderAPI Support**: Custom placeholders for integration with other plugins
 - **Permission Integration**: Automatic permission granting via LuckPerms
-- **Configurable**: Fully customizable perks, costs, and rewards
+- **Fully Configurable**: Customizable perks, costs, requirements, and rewards
 - **Database Support**: SQLite and MySQL support for data persistence
 - **Multi-tier Upgrades**: Progressive upgrade system for homes, vaults, and jobs
 
-## Perk Categories
+## 🎮 Perk Categories
 
-### Command Perks
+### Utility Command Perks
 - **Grindstone**: Access to `/grindstone` command (virtual grindstone)
 - **Workbench**: Access to `/craft` command (virtual crafting table)
 - **Anvil**: Access to `/anvil` command (virtual anvil)
@@ -23,24 +26,25 @@ A modern, feature-rich perks system for Minecraft 1.21.8+ servers. This plugin a
 - **Cartography Table**: Access to `/cartographytable` command (virtual cartography table)
 - **Stonecutter**: Access to `/stonecutter` command (virtual stonecutter)
 
-### Upgrade Perks
-- **Homes**: Increase maximum home count (3 tiers: +3, +5, +7)
-- **Vaults**: Unlock additional vaults (3 tiers: +1, +1, +2)
-- **Jobs**: Increase job slots (3 tiers: +1, +1, +1)
+### Progressive Upgrade Perks
+- **Homes**: Increase maximum home count (3 tiers: +3, +5, +7 homes)
+- **Vaults**: Unlock additional vaults (3 tiers: +1, +1, +2 vaults)
+- **Jobs**: Increase job slots (3 tiers: +1, +1, +1 job slots)
 
-## Commands
+
+## 📋 Commands
 
 - `/perks` - Open the perks GUI
 - `/perks help` - Show help information
 - `/perks reload` - Reload plugin configuration (admin only)
 
-## Permissions
+## 🔐 Permissions
 
 - `bubbleperks.use` - Basic access to perks system (default: true)
 - `bubbleperks.admin` - Administrative access (default: op)
 - `bubbleperks.bypass` - Bypass all perk requirements (default: false)
 
-## Placeholders
+## 🏷️ Placeholders
 
 When PlaceholderAPI is installed, the following placeholders are available:
 
@@ -48,32 +52,46 @@ When PlaceholderAPI is installed, the following placeholders are available:
 - `%bubbleperks_level_<perkid>%` - Get player's perk level
 - `%bubbleperks_total_perks%` - Get total number of perks owned by player
 
-## Dependencies
+## 📦 Dependencies
 
 ### Required
-- **Vault** - Economy integration
+- **Vault** - Economy integration (fallback)
 - **LuckPerms** - Permission management
 
 ### Optional
+- **CoinsEngine** - Primary economy system (recommended, v2.5.0+)
 - **PlaceholderAPI** - Placeholder support
-- **Essentials** - Command perks integration
+- **Essentials** - Command perks integration & economy fallback
 - **Jobs** - Job slot upgrades
 - **AxVaults** - Vault upgrades
-- **CoinsEngine** - Alternative economy support
 
-## Installation
+## 🚀 Installation
 
-1. Download the latest release from the releases page
+1. Download the latest release (`BubblePerks-2.0.0.jar`)
 2. Place the JAR file in your `plugins` folder
-3. Install required dependencies (Vault, LuckPerms)
+3. Install required dependencies:
+   - **Vault** (economy bridge)
+   - **LuckPerms** (permissions)
+   - **CoinsEngine** (recommended for currency) OR **Essentials** (economy fallback)
 4. Restart your server
 5. Configure the plugin files in `plugins/BubblePerks/`
-6. Reload with `/perks reload`
+6. Set your currency ID in `config.yml` under `economy.coinsengine-currency`
+7. Reload with `/perks reload`
 
-## Configuration
+## ⚙️ Configuration
 
 ### config.yml
-Main plugin configuration including database settings, GUI options, and integrations.
+Main plugin configuration including economy settings, GUI options, and integrations.
+
+**Economy Settings (v2.0.0+)**:
+```yaml
+economy:
+  currency-symbol: '🫧'
+  format-thousands: true
+  coinsengine-currency: 'coins'  # Your CoinsEngine currency ID
+  use-coinsengine: true           # Use CoinsEngine instead of Vault
+```
+
 
 ### perks.yml
 Define all available perks including costs, permissions, commands, and rewards.

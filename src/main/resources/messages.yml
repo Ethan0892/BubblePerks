@@ -1,45 +1,118 @@
 # Messages Configuration
-# All plugin messages
+# All plugin messages with enhanced formatting
 
-prefix: '<gold><b>Bubble<aqua>Perks <dark_gray>»'
+prefix: '&6&lBubble&bPerks &8»'
 
 # General messages
 general:
-  no-permission: '{prefix} <red>You don''t have permission to use this!'
-  player-only: '{prefix} <red>This command can only be used by players!'
-  reload-success: '{prefix} <green>Plugin reloaded successfully!'
-  reload-error: '{prefix} <red>Failed to reload plugin: {error}'
+  no-permission: '{prefix} &cYou don''t have permission to use this!'
+  player-only: '{prefix} &cThis command can only be used by players!'
+  reload-success: '{prefix} &a✔ Plugin reloaded successfully!'
+  reload-error: '{prefix} &c✘ Failed to reload plugin: {error}'
 
 # Economy messages
 economy:
-  insufficient-funds: '{prefix} <red>You need {amount} {currency} to purchase this perk!'
-  purchase-success: '{prefix} <green>Successfully purchased {perk}!'
-  purchase-failed: '{prefix} <red>Failed to purchase perk!'
+  insufficient-funds: '{prefix} &cYou need &b{amount} 🫧 &cto purchase this perk!'
+  purchase-success: '{prefix} &a✔ Successfully purchased &f{perk}&a!'
+  purchase-failed: '{prefix} &c✘ Failed to purchase perk!'
+  balance-display: '&bBalance: &b{balance} 🫧'
 
 # Perk messages
 perks:
-  already-owned: '{prefix} <yellow>You already own this perk!'
-  max-level: '{prefix} <yellow>You''ve reached the maximum level for this perk!'
-  requirements-not-met: '{prefix} <red>You don''t meet the requirements for this perk!'
+  already-owned: '{prefix} &e⚠ You already own this perk!'
+  max-level: '{prefix} &e⚠ You''ve reached the maximum level for this perk!'
+  requirements-not-met: '{prefix} &c✘ You don''t meet the requirements for this perk!'
+  locked: '{prefix} &c🔒 Purchase the previous tier first!'
   
 # GUI messages
 gui:
+  # Player info header
   player-info:
-    name: '<white>{player}'
+    name: '&6&l{player}''s Perks'
     lore:
-      - '<dark_gray>ʙᴀʟᴀɴᴄᴇ: {balance}'
-      - '<dark_gray>ᴘᴇʀᴋs ᴏᴡɴᴇᴅ: {owned_perks}'
+      header: '&f━━━━━━━━━━━━━━━━━━━━━━'
+      balance: '&b◈ &fBalance: &b{balance}'
+      perks: '&b◈ &fPerks: &a{owned_perks}&7/&b{total_perks}'
+      footer: '&f━━━━━━━━━━━━━━━━━━━━━━'
   
+  # Status indicators
+  status:
+    purchased: '&a&l✔ PURCHASED'
+    unlocked: '&a&l✔ UNLOCKED'
+    locked: '&c🔒 &lLOCKED'
+    available: '&a▸ Click to purchase!'
+    insufficient: '&c✘ Insufficient funds'
+    active: '&7This perk is active!'
+    requires-previous: '&7Purchase previous tier first'
+  
+  # Cost formatting
   cost-format:
-    can-afford: '<white>◆ Cost: <green>{balance}<gray>/<#5ccfe6>{cost}{currency} <green>✔'
-    cannot-afford: '<white>◆ Cost: <red>{balance}<gray>/<#5ccfe6>{cost}{currency} <red>❌'
-    purchased: '<light_purple>Purchased!'
+    can-afford: '&e● &fCost: &b{cost} 🫧'
+    cannot-afford: '&c● &fCost: &b{cost} 🫧'
+    your-balance: '&7Your balance: &c{balance} 🫧'
+    purchased: '&dPurchased!'
+  
+  # Category headers
+  categories:
+    utilities: '&6⚙ Utility Commands'
+    homes: '&6⌂ Home Upgrades'
+    vaults: '&5⚑ Vault Upgrades'
+    jobs: '&6⚒ Job Upgrades'
+  
+  # Navigation
+  navigation:
+    close: '&c&l✖ Close'
+    info: '&b&lℹ Information'
+    previous: '&e&l← Previous Page'
+    next: '&e&lNext Page →'
+  
+  # Info button text
+  info-text:
+    welcome: '&7Welcome to the Perks Shop!'
+    tip1: '&e➤ &fClick perks to purchase'
+    tip2: '&e➤ &fEarn &bbubbles &fby playing'
+    tip3: '&e➤ &fUpgrades are permanent'
+    perks-owned: '&7Perks Owned: &a{owned_perks}'
 
 # Help messages
 help:
-  header: '<gold><b>=== BubblePerks Help ==='
+  header: '&6&l=== BubblePerks Help ==='
   commands:
-    - '<yellow>/perks <gray>- Open the perks GUI'
-    - '<yellow>/perks help <gray>- Show this help message'
+    - '&e/perks &7- Open the perks GUI'
+    - '&e/perks help &7- Show this help message'
   admin-commands:
-    - '<yellow>/perks reload <gray>- Reload the plugin'
+    - '&e/perks reload &7- Reload the plugin'
+  footer: '&6&l======================='
+
+# Upgrade tier descriptions
+upgrades:
+  homes:
+    tier1:
+      name: '&a&l+3 Homes'
+      description: '&78 Total'
+    tier2:
+      name: '&a&l+5 Homes'
+      description: '&713 Total'
+    tier3:
+      name: '&a&l+7 Homes'
+      description: '&720 Total'
+  vaults:
+    tier1:
+      name: '&a&l+1 Vault'
+      description: '&72 Total'
+    tier2:
+      name: '&a&l+1 Vault'
+      description: '&73 Total'
+    tier3:
+      name: '&a&l+2 Vaults'
+      description: '&75 Total'
+  jobs:
+    tier1:
+      name: '&a&l+1 Job'
+      description: '&74 Total'
+    tier2:
+      name: '&a&l+1 Job'
+      description: '&75 Total'
+    tier3:
+      name: '&a&l+1 Job'
+      description: '&76 Total'

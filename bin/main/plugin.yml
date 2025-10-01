@@ -1,0 +1,33 @@
+name: BubblePerks
+version: '${project.version}'
+main: com.bubblecraft.perks.BubblePerks
+api-version: '1.21'
+authors: [BubbleCraft]
+description: Advanced perks system for BubbleCraft server
+website: https://bubblecraft.com
+
+depend: [Vault]
+softdepend: [PlaceholderAPI, Essentials, Jobs, CoinsEngine, AxVaults]
+
+commands:
+  perks:
+    description: Open the perks GUI
+    usage: /perks
+    aliases: [perk, upgrades]
+
+permissions:
+  bubbleperks.*:
+    description: Access to all BubblePerks features
+    default: false
+    children:
+      bubbleperks.use: true
+      bubbleperks.admin: true
+  bubbleperks.use:
+    description: Basic access to perks system
+    default: true
+  bubbleperks.admin:
+    description: Administrative access to perks system
+    default: op
+  bubbleperks.bypass:
+    description: Bypass all perk requirements
+    default: false

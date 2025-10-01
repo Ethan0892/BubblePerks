@@ -3,7 +3,7 @@ version: '${project.version}'
 main: com.bubblecraft.perks.BubblePerks
 api-version: '1.21'
 authors: [BubbleCraft]
-description: Advanced perks system for BubbleCraft server
+description: Advanced perks system with CoinsEngine & Vault support
 website: https://bubblecraft.com
 
 depend: [Vault]

@@ -168,7 +168,10 @@ public class PerkManager {
      */
     public boolean purchasePerk(Player player, String perkId) {
         Perk perk = getPerk(perkId);
-        if (perk == null) return false;
+        if (perk == null) {
+            plugin.getLogger().warning("Attempted to purchase null perk: " + perkId);
+            return false;
+        }
         
         // Check if already purchased (has permission)
         if (player.hasPermission(perk.getPermission())) {
@@ -187,6 +190,7 @@ public class PerkManager {
         
         // Withdraw money
         if (!plugin.getEconomyManager().withdraw(player, perk.getCost())) {
+            plugin.getLogger().warning("Failed to withdraw funds for " + player.getName());
             return false;
         }
         
@@ -206,34 +210,54 @@ public class PerkManager {
         Map<String, Object> requirements = perk.getRequirements();
         if (requirements.isEmpty()) return true;
         
-        // Check permission requirements
+        plugin.getLogger().info("[PURCHASE] Checking requirements: " + requirements);
+        
+        // Check permission requirements (e.g., must have tier1 to buy tier2)
         if (requirements.containsKey("permission")) {
             String requiredPerm = (String) requirements.get("permission");
+            plugin.getLogger().info("[PURCHASE] Checking permission requirement: " + requiredPerm);
             if (!player.hasPermission(requiredPerm)) {
+                plugin.getLogger().warning("[PURCHASE] Player missing required permission: " + requiredPerm);
                 return false;
             }
         }
         
-        // Check level requirements
-        if (requirements.containsKey("level")) {
-            int requiredLevel = (Integer) requirements.get("level");
-            if (player.getLevel() < requiredLevel) {
-                return false;
-            }
-        }
+        // NOTE: "level" in perks.yml is for perk tier level, NOT XP level
+        // So we ignore it for purchase requirements
+        // If you want XP level requirements, use a different field name
         
-        // Add more requirement checks as needed
-        
+        plugin.getLogger().info("[PURCHASE] All requirements met!");
         return true;
     }
     
     /**
-     * Execute perk commands
+     * Execute perk commands with logging
      */
     private void executeCommands(Player player, Perk perk) {
+        boolean debug = plugin.getConfig().getBoolean("debug", false);
+        
+        if (perk.getCommands().isEmpty()) {
+            if (debug) {
+                plugin.getLogger().warning("No commands configured for perk: " + perk.getId());
+            }
+            return;
+        }
+        
         for (String command : perk.getCommands()) {
             String processedCommand = command.replace("{player}", player.getName());
-            plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), processedCommand);
+            
+            if (debug) {
+                plugin.getLogger().info("Executing command: " + processedCommand);
+            }
+            
+            boolean result = plugin.getServer().dispatchCommand(
+                plugin.getServer().getConsoleSender(), 
+                processedCommand
+            );
+            
+            if (debug) {
+                plugin.getLogger().info("Command result: " + result);
+            }
         }
     }
     

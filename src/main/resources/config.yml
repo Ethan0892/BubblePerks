@@ -1,54 +1,73 @@
 # BubblePerks Configuration
 # Main plugin settings
+# Enhanced GUI with improved visual organization
 
 # GUI Settings
 gui:
-  title: '<gold><b>Bubble<aqua>Craft <#FFC380>ᴘ<#E9AF87>ᴇ<#D39C8F>ʀ<#BC8896>ᴋ<#A6749D>ꜱ'
-  size: 54 # 6 rows
+  title: '&6&lBubble&bCraft &dPerks'
+  size: 54 # 6 rows (9 columns x 6 rows)
   update-interval: 20 # ticks
   
-  # Slot configuration for perks (0-53 for 6-row inventory)
+  # Layout Reference:
+  # Row 1 (0-8):   Border & Player Info
+  # Row 2 (9-17):  Utility Commands Section
+  # Row 3 (18-26): Home Upgrades Section
+  # Row 4 (27-35): Vault Upgrades Section
+  # Row 5 (36-44): Job Upgrades Section
+  # Row 6 (45-53): Border & Navigation
+  
   slots:
-    # Player info slot
-    player-info: 4
+    # Player info & navigation (Row 1 & 6)
+    player-info: 4     # Center of top row
+    close-button: 49   # Center of bottom row
+    info-button: 4     # Same as player info (dynamic)
     
-    # Utility command perk slots
+    # Utility command perk slots (Row 2: slots 9-17)
+    # Note: Slot 9 is used for section separator
     utilities:
-      grindstone: 10
-      workbench: 19
-      anvil: 28
-      enderchest: 37
-      cartographytable: 11
-      stonecutter: 20
-      carttable: 29
-      smithingtable: 38
-      loom: 47
+      header: 10          # Category header
+      grindstone: 11      # Slot 1
+      workbench: 12       # Slot 2
+      anvil: 13           # Slot 3
+      enderchest: 14      # Slot 4
+      cartographytable: 15 # Slot 5
+      stonecutter: 16     # Slot 6
     
-    # Home upgrade slots (info + tiers)
+    # Home upgrade slots (Row 3: slots 18-26)
+    # Note: Slot 18 is used for section separator
     homes:
-      info: 12
-      tier1: 21
-      tier2: 30
-      tier3: 39
+      header: 19          # Category header "Home Upgrades"
+      status: 20          # Current home status display
+      tier1: 21           # +3 Homes upgrade
+      tier2: 22           # +5 Homes upgrade
+      tier3: 23           # +7 Homes upgrade
     
-    # Vault upgrade slots (info + tiers) 
+    # Vault upgrade slots (Row 4: slots 27-35)
+    # Note: Slot 27 is used for section separator
     vaults:
-      info: 14
-      tier1: 23
-      tier2: 32
-      tier3: 41
+      header: 28          # Category header "Vault Upgrades"
+      status: 29          # Current vault status display
+      tier1: 30           # +1 Vault upgrade
+      tier2: 31           # +1 Vault upgrade
+      tier3: 32           # +2 Vaults upgrade
     
-    # Job upgrade slots (info + tiers)
+    # Job upgrade slots (Row 5: slots 36-44)
+    # Note: Slot 36 is used for section separator
     jobs:
-      info: 13
-      tier1: 22
-      tier2: 31
-      tier3: 40
+      header: 37          # Category header "Job Upgrades"
+      status: 38          # Current job status display
+      tier1: 39           # +1 Job upgrade
+      tier2: 40           # +1 Job upgrade
+      tier3: 41           # +1 Job upgrade
 
 # Economy Settings
 economy:
   currency-symbol: '🫧'
   format-thousands: true
+  # CoinsEngine currency ID - change to your currency ID (check with /coins currency or in plugins/CoinsEngine/currencies/)
+  coinsengine-currency: 'coins'
+  # Use CoinsEngine directly instead of Vault (recommended if you have CoinsEngine)
+  use-coinsengine: true
 
 # Integration Settings
 integrations:

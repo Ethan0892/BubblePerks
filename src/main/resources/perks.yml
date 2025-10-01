@@ -3,16 +3,16 @@
 
 perks:
   grindstone:
-    name: '<#877663><b>🪨 /grindstone'
+    name: '&7&l🪨 /grindstone'
     description: 'Access to a virtual grindstone'
     type: COMMAND
     cost: 100.0
     permission: 'essentials.grindstone'
     material: GRINDSTONE
     lore:
-      - '<dark_gray>ᴄᴏᴍᴍᴀɴᴅ'
-      - '<#877663>▪ <white>Access to a virtual grindstone!'
-      - '<#877663>▪ <white>Infinite uses.'
+      - '&8ᴄᴏᴍᴍᴀɴᴅ'
+      - '&7▪ &fAccess to a virtual grindstone!'
+      - '&7▪ &fInfinite uses.'
     commands:
       - 'lp user {player} permission set essentials.grindstone true'
     requirements:
@@ -23,16 +23,16 @@ perks:
     max-level: 1
 
   workbench:
-    name: '<#7a482a><b>⛏ /craft'
+    name: '&6&l⛏ /craft'
     description: 'Access to a virtual crafting table'
     type: COMMAND
     cost: 175.0
     permission: 'essentials.workbench'
     material: CRAFTING_TABLE
     lore:
-      - '<dark_gray>ᴄᴏᴍᴍᴀɴᴅ'
-      - '<#7a482a>▪ <white>Access to a virtual crafting table!'
-      - '<#7a482a>▪ <white>Craft on the fly!'
+      - '&8ᴄᴏᴍᴍᴀɴᴅ'
+      - '&6▪ &fAccess to a virtual crafting table!'
+      - '&6▪ &fCraft on the fly!'
     commands:
       - 'lp user {player} permission set essentials.workbench true'
     requirements:
@@ -43,16 +43,16 @@ perks:
     max-level: 1
 
   anvil:
-    name: '<#FF4700><b>🔨 /anvil'
+    name: '&c&l🔨 /anvil'
     description: 'Access to a virtual anvil'
     type: COMMAND
     cost: 200.0
     permission: 'essentials.anvil'
     material: ANVIL
     lore:
-      - '<dark_gray>ᴄᴏᴍᴍᴀɴᴅ'
-      - '<#FF4700>▪ <white>Access to a virtual anvil!'
-      - '<#FF4700>▪ <white>Does not break.'
+      - '&8ᴄᴏᴍᴍᴀɴᴅ'
+      - '&c▪ &fAccess to a virtual anvil!'
+      - '&c▪ &fDoes not break.'
     commands:
       - 'lp user {player} permission set essentials.anvil true'
     requirements:
@@ -63,16 +63,16 @@ perks:
     max-level: 1
 
   enderchest:
-    name: '<#4582F1><b>📦 /echest'
+    name: '&9&l📦 /echest'
     description: 'Access to a virtual ender chest'
     type: COMMAND
     cost: 200.0
     permission: 'essentials.enderchest'
     material: ENDER_CHEST
     lore:
-      - '<dark_gray>ᴄᴏᴍᴍᴀɴᴅ'
-      - '<#4582F1>▪ <white>Access to a virtual'
-      - '<#4582F1>▪ <white>Ender Chest!'
+      - '&8ᴄᴏᴍᴍᴀɴᴅ'
+      - '&9▪ &fAccess to a virtual'
+      - '&9▪ &fEnder Chest!'
     commands:
       - 'lp user {player} permission set essentials.enderchest true'
     requirements:
@@ -83,16 +83,16 @@ perks:
     max-level: 1
 
   cartographytable:
-    name: '<#8B4513><b>🗺️ /cartographytable'
+    name: '&6&l🗺️ /cartographytable'
     description: 'Access to a virtual cartography table'
     type: COMMAND
     cost: 150.0
     permission: 'essentials.cartographytable'
     material: CARTOGRAPHY_TABLE
     lore:
-      - '<dark_gray>ᴄᴏᴍᴍᴀɴᴅ'
-      - '<#8B4513>▪ <white>Access to a virtual cartography table!'
-      - '<#8B4513>▪ <white>Edit and clone maps anywhere!'
+      - '&8ᴄᴏᴍᴍᴀɴᴅ'
+      - '&6▪ &fAccess to a virtual cartography table!'
+      - '&6▪ &fEdit and clone maps anywhere!'
     commands:
       - 'lp user {player} permission set essentials.cartographytable true'
     requirements:
@@ -103,16 +103,16 @@ perks:
     max-level: 1
 
   stonecutter:
-    name: '<#708090><b>🪨 /stonecutter'
+    name: '&7&l🪨 /stonecutter'
     description: 'Access to a virtual stonecutter'
     type: COMMAND
     cost: 125.0
     permission: 'essentials.stonecutter'
     material: STONECUTTER
     lore:
-      - '<dark_gray>ᴄᴏᴍᴍᴀɴᴅ'
-      - '<#708090>▪ <white>Access to a virtual stonecutter!'
-      - '<#708090>▪ <white>Cut stone blocks efficiently!'
+      - '&8ᴄᴏᴍᴍᴀɴᴅ'
+      - '&7▪ &fAccess to a virtual stonecutter!'
+      - '&7▪ &fCut stone blocks efficiently!'
     commands:
       - 'lp user {player} permission set essentials.stonecutter true'
     requirements:
@@ -123,15 +123,15 @@ perks:
     max-level: 1
 
   homes_tier1:
-    name: '<green><b>+3 <green>Homes'
+    name: '&a&l+3 &aHomes'
     description: 'Increase home limit by 3'
     type: UPGRADE
     cost: 100.0
     permission: 'essentials.sethome.multiple.tier1'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Increase your home limit!'
-      - '<green>▪ <white>+3 additional homes.'
+      - '&a▪ &fIncrease your home limit!'
+      - '&a▪ &f+3 additional homes.'
     commands:
       - 'lp user {player} permission set essentials.sethome.multiple.tier1 true'
     requirements:
@@ -142,15 +142,15 @@ perks:
     max-level: 1
 
   homes_tier2:
-    name: '<green><b>+5 <green>Homes'
+    name: '&a&l+5 &aHomes'
     description: 'Increase home limit by 5'
     type: UPGRADE
     cost: 150.0
     permission: 'essentials.sethome.multiple.tier2'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Increase your home limit!'
-      - '<green>▪ <white>+5 additional homes.'
+      - '&a▪ &fIncrease your home limit!'
+      - '&a▪ &f+5 additional homes.'
     commands:
       - 'lp user {player} permission set essentials.sethome.multiple.tier2 true'
     requirements:
@@ -162,15 +162,15 @@ perks:
     max-level: 1
 
   homes_tier3:
-    name: '<green><b>+7 <green>Homes'
+    name: '&a&l+7 &aHomes'
     description: 'Increase home limit by 7'
     type: UPGRADE
     cost: 200.0
     permission: 'essentials.sethome.multiple.tier3'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Increase your home limit!'
-      - '<green>▪ <white>+7 additional homes.'
+      - '&a▪ &fIncrease your home limit!'
+      - '&a▪ &f+7 additional homes.'
     commands:
       - 'lp user {player} permission set essentials.sethome.multiple.tier3 true'
     requirements:
@@ -182,15 +182,15 @@ perks:
     max-level: 1
 
   vault_tier1:
-    name: '<green><b>+1 <green>Vault'
+    name: '&a&l+1 &aVault'
     description: 'Unlock additional vault'
     type: UPGRADE
     cost: 100.0
     permission: 'axvaults.vault.2'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Unlock an additional vault!'
-      - '<green>▪ <white>Access to vault #2.'
+      - '&a▪ &fUnlock an additional vault!'
+      - '&a▪ &fAccess to vault #2.'
     commands:
       - 'lp user {player} permission set axvaults.vault.2 true'
     requirements:
@@ -201,15 +201,15 @@ perks:
     max-level: 1
 
   vault_tier2:
-    name: '<green><b>+1 <green>Vault'
+    name: '&a&l+1 &aVault'
     description: 'Unlock additional vault'
     type: UPGRADE
     cost: 150.0
     permission: 'axvaults.vault.3'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Unlock an additional vault!'
-      - '<green>▪ <white>Access to vault #3.'
+      - '&a▪ &fUnlock an additional vault!'
+      - '&a▪ &fAccess to vault #3.'
     commands:
       - 'lp user {player} permission set axvaults.vault.3 true'
     requirements:
@@ -221,15 +221,15 @@ perks:
     max-level: 1
 
   vault_tier3:
-    name: '<green><b>+2 <green>Vaults'
+    name: '&a&l+2 &aVaults'
     description: 'Unlock additional vaults'
     type: UPGRADE
     cost: 225.0
     permission: 'axvaults.vault.5'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Unlock additional vaults!'
-      - '<green>▪ <white>Access to vaults #4 & #5.'
+      - '&a▪ &fUnlock additional vaults!'
+      - '&a▪ &fAccess to vaults #4 & #5.'
     commands:
       - 'lp user {player} permission set axvaults.vault.4 true'
       - 'lp user {player} permission set axvaults.vault.5 true'
@@ -242,15 +242,15 @@ perks:
     max-level: 1
 
   job_tier1:
-    name: '<green><b>+1 <green>Job Slot'
+    name: '&a&l+1 &aJob Slot'
     description: 'Increase job limit by 1'
     type: UPGRADE
     cost: 100.0
     permission: 'jobs.max.4'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Increase your job limit!'
-      - '<green>▪ <white>+1 additional job slot.'
+      - '&a▪ &fIncrease your job limit!'
+      - '&a▪ &f+1 additional job slot.'
     commands:
       - 'lp user {player} permission set jobs.max.4 true'
     requirements:
@@ -261,15 +261,15 @@ perks:
     max-level: 1
 
   job_tier2:
-    name: '<green><b>+1 <green>Job Slot'
+    name: '&a&l+1 &aJob Slot'
     description: 'Increase job limit by 1'
     type: UPGRADE
     cost: 150.0
     permission: 'jobs.max.5'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Increase your job limit!'
-      - '<green>▪ <white>+1 additional job slot.'
+      - '&a▪ &fIncrease your job limit!'
+      - '&a▪ &f+1 additional job slot.'
     commands:
       - 'lp user {player} permission set jobs.max.5 true'
     requirements:
@@ -281,15 +281,15 @@ perks:
     max-level: 1
 
   job_tier3:
-    name: '<green><b>+1 <green>Job Slot'
+    name: '&a&l+1 &aJob Slot'
     description: 'Increase job limit by 1'
     type: UPGRADE
     cost: 200.0
     permission: 'jobs.max.6'
     material: GREEN_STAINED_GLASS_PANE
     lore:
-      - '<green>▪ <white>Increase your job limit!'
-      - '<green>▪ <white>+1 additional job slot.'
+      - '&a▪ &fIncrease your job limit!'
+      - '&a▪ &f+1 additional job slot.'
     commands:
       - 'lp user {player} permission set jobs.max.6 true'
     requirements:
