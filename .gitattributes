@@ -1,0 +1,4 @@
+bin/** -text
+target/** -text
+*.jar -text
+*.class -text
